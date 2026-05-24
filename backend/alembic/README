@@ -1,0 +1,19 @@
+# Alembic configuration
+
+This folder is created and managed by Alembic.
+
+## Common commands
+
+From `backend/`:
+
+- Initialize (already done in repo):
+  - `uv run alembic init alembic`
+
+- Create revision:
+  - `uv run alembic revision -m "message" --autogenerate`
+
+- Apply migrations:
+  - `uv run alembic upgrade head`
+
+- Downgrade one revision:
+  - `uv run alembic downgrade -1`
