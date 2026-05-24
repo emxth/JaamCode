@@ -1,7 +1,7 @@
 [project]
 name = "backend"
 version = "0.1.0"
-description = "Add your description here"
+description = "Modular monolithic project management and client collaboration platform built for software development teams, business analysts, and clients to manage projects, communication, payments, approvals, and progress tracking in a centralized system designed with a scalable and maintainable architecture using FastAPI, React, and PostgreSQL."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
