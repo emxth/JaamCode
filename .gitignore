@@ -1,0 +1,40 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env files (keep .env.example instead)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Coverage / test artifacts
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Virtual envs
+.venv/
+venv/
+ENV/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Type checker / linter caches
+.mypy_cache/
+.ruff_cache/
+
+# Alembic (optional: keep versions/ tracked, but ignore local ini overrides if any)
+alembic.ini.bak
