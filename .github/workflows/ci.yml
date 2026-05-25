@@ -12,9 +12,30 @@ jobs:
   lint-test-build:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: app
+          POSTGRES_USER: app
+          POSTGRES_PASSWORD: app
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U app -d app"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
     defaults:
       run:
         working-directory: backend
+
+    env:
+      ENV: test
+      DATABASE_URL: postgresql+psycopg://app:app@localhost:5432/app
+      REDIS_URL: redis://localhost:6379/0
+      LOG_LEVEL: INFO
 
     steps:
       - name: Checkout
@@ -41,6 +62,9 @@ jobs:
 
       - name: Mypy (type check)
         run: uv run mypy app
+
+      - name: Alembic upgrade (migrate)
+        run: uv run alembic upgrade head
 
       - name: Pytest
         run: uv run pytest -q
