@@ -3,8 +3,9 @@ from __future__ import annotations
 import os
 
 import pytest
-from alembic import command
 from alembic.config import Config
+
+from alembic import command
 
 
 @pytest.fixture(scope="session", autouse=True)
