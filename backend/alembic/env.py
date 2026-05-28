@@ -7,10 +7,7 @@ from sqlalchemy import engine_from_config, pool
 from alembic import context
 from app.core.config.settings import settings
 from app.core.database.base import Base
-
-# If you add models later, import them here so Alembic can "see" them.
-# Example:
-# from app.modules.users.models.user import User  # noqa: F401
+from app.modules.users.models.user import User  # noqa: F401
 
 config = context.config
 
